@@ -1,25 +1,23 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+const postLogin = JSON.parse(open('../../fixtures/postLogin.json'));
 
 export let options = {
-   stages: [
-        { duration: '5s', target: 10 }, 
-        { duration: '20m', target: 10 }, 
-        { duration: '5s', target: 0 }, 
+    stages: [
+        { duration: '5s', target: 10 },
+        { duration: '20m', target: 10 },
+        { duration: '5s', target: 0 },
     ],
-    
-    thresholds: {        
-        http_req_duration: ['p(95)<200', 'max<200'], 
-        http_req_failed: ['rate<0.01'], 
+
+    thresholds: {
+        http_req_duration: ['p(95)<200', 'max<200'],
+        http_req_failed: ['rate<0.01'],
     },
 }
 
 export default function () {
     const url = 'http://localhost:3000/users/login';
-    const payload = JSON.stringify({
-        username: 'julio',
-        password: '123456',
-    });
+    const payload = JSON.stringify(postLogin);
 
     const params = {
         headers: {
