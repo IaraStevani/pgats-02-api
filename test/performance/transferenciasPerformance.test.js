@@ -1,5 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import {pegarBaseURL} from '../../utils/variaveis.js';
 import { obterToken } from '../../helpers/autenticaocaPerformance.js';
 
 export const options = {
@@ -9,7 +10,7 @@ export const options = {
 export default function () {
     const token = obterToken();
 
-    const url = 'http://localhost:3000/transfers';
+    const url = pegarBaseURL() + '/transfers';
 
     const payload = JSON.stringify({
         from: 'julio',

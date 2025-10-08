@@ -1,5 +1,6 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import {pegarBaseURL} from '../../utils/variaveis.js';
 const postLogin = JSON.parse(open('../../fixtures/postLogin.json'));
 
 export let options = {
@@ -16,7 +17,7 @@ export let options = {
 }
 
 export default function () {
-    const url = 'http://localhost:3000/users/login';
+    const url = pegarBaseURL() + '/users/login';
     const payload = JSON.stringify(postLogin);
 
     const params = {
