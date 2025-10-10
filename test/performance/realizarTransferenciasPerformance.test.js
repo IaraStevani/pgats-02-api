@@ -1,7 +1,7 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 import { pegarBaseURL } from '../../utils/variaveis.js';
-import { obterToken } from '../../helpers/autenticaocaPerformance.js';
+import { obterToken } from '../../helpers/autenticacaoPerformance.js';
 
 export const options = {
     stages: [

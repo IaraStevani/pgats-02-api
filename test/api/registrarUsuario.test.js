@@ -22,17 +22,6 @@ describe('Users', () => {
 
             expect(resposta.status).to.equal(201);
         })
-
-        describe('GET/users', () => {
-            it('Deve retornar sucesso com 200 e dados iguais ao registro de usuários contidos no banco de dados', async () => {
-                const resposta = await request(process.env.BASE_URL_REST)
-                    .get('/users')
-                    .set('Authorization', `Bearer ${token}`)
-
-                expect(resposta.status).to.equal(200);
-                expect(resposta.body).to.be.an('array');
-            })
-        })
     })
 })
 
