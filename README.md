@@ -81,6 +81,10 @@ Rode `npm run start-graphql` para executar a API do GraphQL e acesse a URL http:
 Para dúvidas, consulte a documentação Swagger, GraphQL Playground ou o código-fonte.
 
 Evidências:
+- Testes API 
 <img width="1408" height="496" alt="image" src="https://github.com/user-attachments/assets/aa0dab4e-0ca7-43ef-9d9c-f47e6bebb1dd" />
+
+- Testes Performance com k6
+ <img width="1919" height="952" alt="image" src="https://github.com/user-attachments/assets/cd456ece-2178-4bd6-9783-7abe55f1ae9a" />
 
 
